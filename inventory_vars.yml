@@ -3,7 +3,7 @@ all:
     webservers:
       hosts:
         webserver1:
-          ansible_host: 54.215.134.8
+          ansible_host: 54.215.134.87
 
   vars:  
     ansible_connection: winrm
