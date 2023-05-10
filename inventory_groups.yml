@@ -9,5 +9,5 @@ all:
          webservers:
             hosts:
               webserver1:
-              windows_se_erver1:
+              windows_server1:
                 ansiblhost: 54.215.134.87
