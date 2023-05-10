@@ -1,0 +1,5 @@
+webserver1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "ntlm: HTTPSConnectionPool(host='%3cip%20address%20provided%20for%20windows%20vm%3e', port=5986): Max retries exceeded with url: /wsman (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7c4705d000>: Failed to establish a new connection: [Errno -2] Name or service not known'))",
+    "unreachable": true
+}
