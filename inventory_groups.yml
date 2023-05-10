@@ -10,4 +10,4 @@ all:
          webservers:
             hosts:
               windows_server1:
-                ansiblhost: 54.215.134.87
+                ansible_host: 54.215.134.87
