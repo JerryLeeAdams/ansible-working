@@ -1,11 +1,6 @@
 - hosts: localhost
   tasks:
-    - name: Test that my module works
-      github_repo:
-      register: result
-
-    - debug: var=result
-    - name: Create a github Repo
+     - name: Create a github Repo
       github_repo:
         github_auth_key: "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"
         username: "jerryleeadams"
@@ -17,3 +12,4 @@
         has_downloads: no
         state: present
       register: result
+    - debug: var=result
