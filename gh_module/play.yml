@@ -1,41 +1,19 @@
-DOCUMENTATION = '''
----
-module: github_repo
-short_description: Manage your repos on Github
-'''
-
-EXAMPLES = '''
-- name: Create a github Repo
-  github_repo:
-    github_auth_key: "..."
-    name: "Hello-World"
-    description: "This is your first repository"
-    private: yes
-    has_issues: no
-    has_wiki: no
-    has_downloads: no
-  register: result
-
-- name: Delete that repo
-  github_repo:
-    github_auth_key: "..."
-    name: "Hello-World"
-    state: absent
-  register: result
-'''
 - hosts: localhost
+  vars:
+    - github_token: "YOUR TOKEN HERE"
+    - ansible_python_interpreter: "/usr/bin/python3"
   tasks:
-    - name: Create a github Repo
-      github_repo:
-        github_auth_key: "..."
+    - name: Create a GitHub Repo
+      gh_repo:
+        github_auth_key:  "{{github_token}}" 
         username: "YOUR GITHUB USERNAME HERE"
         name: "Hello-World"
-        description: "This is your first repository"
+        description: "First repo created with custom Ansible module"
         private: yes
         has_issues: no
         has_wiki: no
         has_downloads: no
         state: present
       register: result
-
+      
     - debug: var=result
