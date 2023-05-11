@@ -1,6 +1,6 @@
 - hosts: localhost
   vars:
-    - github_token: "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"
+    - github_token: "TOKEN HERE"
     - ansible_python_interpreter: "/usr/bin/python3"
   tasks:
     - name: Create a GitHub Repo
@@ -14,6 +14,18 @@
         has_wiki: no
         has_downloads: no
         state: present
+      tags:
+      - never
+      - createrepo
       register: result
+    - name: Delete GitHub Repo
+      github_repo:
+        github_auth_key:  "{{github_token}}" 
+        username: "YOUR GITHUB USERNAME HERE"
+        name: "Hello-World"
+        state: absent
+      tags:
+      - never
+      - deleterepo
 
     - debug: var=result
